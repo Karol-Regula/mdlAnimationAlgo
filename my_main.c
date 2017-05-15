@@ -72,8 +72,37 @@ void first_pass() {
   //in order to use name and num_frames
   //they must be extern variables
   extern int num_frames;
-  extern char name[128]; 
-
+  extern char name[128];
+  int baseSet = 0; 
+  int varySet = 0;
+  num_frames = 0;
+  
+  printf("FIRST PASS\n");
+  int i = 0;
+  for (i=0;i<lastop;i++) {
+    //printf("%d: \n", i);
+    switch (op[i].opcode){
+      case FRAMES:
+        num_frames = op[i].op.frames.num_frames;
+        break;
+      case BASENAME:
+        strcpy(name, op[i].op.basename.p->name);
+        //printf("Name: %s\n", name);
+        baseSet = 1;
+        break;
+      case VARY:
+        varySet = 1;
+        break;
+    }
+  }
+  if (num_frames <= 0 && varySet){
+    printf("Frame number (%d) out of range.\n",num_frames);//test
+    exit(0);
+  }
+  if (!baseSet){
+    printf("Basename not specified, setting basename to \"simple\".\n");//test
+    strcpy(name, "simple");
+  }
   return;
 }
 
