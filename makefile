@@ -43,6 +43,7 @@ stack.o: stack.c stack.h matrix.h
 
 run: all
 	./mdl simple_anim.mdl
+	animate simple.gif
 
 clean:
 	rm *.o
@@ -51,4 +52,4 @@ clean:
 	rm -rf mdl.dSYM
 	rm mdl
 	rm *.gif
-	rm anim/*
+	rm anim/*.*

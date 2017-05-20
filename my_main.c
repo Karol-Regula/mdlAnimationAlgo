@@ -173,9 +173,9 @@ struct vary_node ** second_pass() {
           knob->next = knobs[j];
           knobs[j] = knob;
           current += increment;
-          printf("%s\n", knob->name);
-          printf("%f\n", knob->value);   
-          printf("%f\n", current);
+          //printf("%s\n", knob->name);
+          //printf("%f\n", knob->value);   
+          //printf("%f\n", current);
         }
         break;
     }
