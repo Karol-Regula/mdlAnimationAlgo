@@ -50,3 +50,5 @@ clean:
 	rm lex.yy.c
 	rm -rf mdl.dSYM
 	rm mdl
+	rm *.gif
+	rm anim/*

@@ -788,7 +788,6 @@ int main(int argc, char **argv) {
   //MY_MAIN IN ORDER TO RUN YOUR CODE
   
   //print_pcode();
-  first_pass();
   my_main();
 
   return 0;    
